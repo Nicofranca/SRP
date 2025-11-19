@@ -9,7 +9,7 @@ public class ProcessadorDePedido {
         PedidoRepository pedidoRepository = new PedidoRepository();
         ConfirmacaoEmailService confirmacaoEmailService = new ConfirmacaoEmailService();
         ValidacaoQuantidade validacaoQuantidade = new ValidacaoQuantidade();
-        CalculoFreteEImposto calculoFreteEImposto = new CalculoFreteEImposto();
+        CalculadoraFrete calculadoraValores = new CalculadoraFrete();
 
         // RESPONSABILIDADE 1 & 2: Validação e Cálculo de Domínio
         public double processar(Pedido pedido) throws Exception {
@@ -20,7 +20,9 @@ public class ProcessadorDePedido {
 
 // 2. Lógica de Cálculo de Frete e Impostos (RESPONSABILIDADE 2)
 
-            double valorFinal = calculoFreteEImposto.calcularFrete(pedido);
+            double frete = calculadoraValores.calcularFrete(pedido);
+
+            double valorFinal = calculadoraValores.valorFinal(pedido, frete);
 
 // Simulação de pagamento e atualização de status
 

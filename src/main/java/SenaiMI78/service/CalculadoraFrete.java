@@ -2,7 +2,7 @@ package SenaiMI78.service;
 
 import SenaiMI78.model.Pedido;
 
-public class CalculoFreteEImposto {
+public class CalculadoraFrete {
     public double calcularFrete(Pedido pedido){
         double frete = 0.0;
 
@@ -11,6 +11,11 @@ public class CalculoFreteEImposto {
         } else {
             frete = 0.0; // Frete grátis
         }
+
+        return frete;
+    }
+
+    public double valorFinal(Pedido pedido, double frete){
 
         double impostos = pedido.getValorTotal() * 0.15; // 15% de imposto fixo
         double valorFinal = pedido.getValorTotal() + frete + impostos;
