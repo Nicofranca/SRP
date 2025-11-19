@@ -2,6 +2,8 @@ package SenaiMI78.service;
 
 import SenaiMI78.model.Pedido;
 import SenaiMI78.repository.PedidoRepository;
+import SenaiMI78.service.calculadora.CalculadoraFrete;
+import SenaiMI78.service.calculadora.CalculadoraImposto;
 import SenaiMI78.service.validador.ValidacaoQuantidade;
 
 public class ProcessadorDePedido {
@@ -9,7 +11,8 @@ public class ProcessadorDePedido {
         PedidoRepository pedidoRepository = new PedidoRepository();
         ConfirmacaoEmailService confirmacaoEmailService = new ConfirmacaoEmailService();
         ValidacaoQuantidade validacaoQuantidade = new ValidacaoQuantidade();
-        CalculadoraFrete calculadoraValores = new CalculadoraFrete();
+        CalculadoraFrete calculadoraFrete = new CalculadoraFrete();
+        CalculadoraImposto calculadoraImposto = new CalculadoraImposto();
 
         // RESPONSABILIDADE 1 & 2: Validação e Cálculo de Domínio
         public double processar(Pedido pedido) throws Exception {
@@ -20,9 +23,9 @@ public class ProcessadorDePedido {
 
 // 2. Lógica de Cálculo de Frete e Impostos (RESPONSABILIDADE 2)
 
-            double frete = calculadoraValores.calcularFrete(pedido);
+            double frete = calculadoraFrete.calcularFrete(pedido);
 
-            double valorFinal = calculadoraValores.valorFinal(pedido, frete);
+            double valorFinal = calculadoraImposto.valorFinal(pedido, frete);
 
 // Simulação de pagamento e atualização de status
 
