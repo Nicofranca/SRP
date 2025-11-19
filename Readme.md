@@ -20,11 +20,11 @@ src/main/java/SenaiMI78/
 │   │   └── ValidacaoQuantidade.java      # RESPONSABILIDADE 1 - Validação
 │   │
 │   ├── calculadoras/
-│   │   ├── CalculadoraFrete.java       # RESPONSABILIDADE "2A" - Cálculo Frete
-│   │   └── CalculadoraImpostos.java    # RESPONSABILIDADE "2B" - Cálculo Impostos
+│   │   ├── CalculadoraFrete.java         # RESPONSABILIDADE "2A" - Cálculo Frete
+│   │   └── CalculadoraImpostos.java      # RESPONSABILIDADE "2B" - Cálculo Impostos
 │   │
 │   └── notificacoes/
-│       └── ConfirmacaoEmailService.java           # RESPONSABILIDADE 4 - Notificação
+│       └── ConfirmacaoEmailService.java  # RESPONSABILIDADE 4 - Notificação
 │
 └── repository/
     └── PedidoRepository.java             # RESPONSABILIDADE 3 - Persistência
