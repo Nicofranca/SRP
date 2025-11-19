@@ -14,17 +14,17 @@ src/main/java/SenaiMI78/
 │   └── Pedido.java                       # Entidade de domínio
 │
 ├── service/
-│   ├── ServicoDePedido.java              # ORQUESTRADOR - Coordena o fluxo
+│   ├── ProcessadorDePedido.java          # ORQUESTRADOR - Coordena o fluxo
 │   │
 │   ├── validador/
-│   │   └── ValidadorDeEstoque.java       # RESPONSABILIDADE 1 - Validação
+│   │   └── ValidacaoQuantidade.java      # RESPONSABILIDADE 1 - Validação
 │   │
-│   ├── calculo/
-│   │   ├── CalculadoraDeFrete.java       # RESPONSABILIDADE 2A - Cálculo Frete
-│   │   └── CalculadoraDeImpostos.java    # RESPONSABILIDADE 2B - Cálculo Impostos
+│   ├── calculadoras/
+│   │   ├── CalculadoraFrete.java       # RESPONSABILIDADE "2A" - Cálculo Frete
+│   │   └── CalculadoraImpostos.java    # RESPONSABILIDADE "2B" - Cálculo Impostos
 │   │
-│   └── notificacao/
-│       └── ServicoDeEmail.java           # RESPONSABILIDADE 4 - Notificação
+│   └── notificacoes/
+│       └── ConfirmacaoEmailService.java           # RESPONSABILIDADE 4 - Notificação
 │
 └── repository/
     └── PedidoRepository.java             # RESPONSABILIDADE 3 - Persistência

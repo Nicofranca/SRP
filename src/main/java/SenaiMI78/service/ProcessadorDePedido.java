@@ -4,6 +4,7 @@ import SenaiMI78.model.Pedido;
 import SenaiMI78.repository.PedidoRepository;
 import SenaiMI78.service.calculadora.CalculadoraFrete;
 import SenaiMI78.service.calculadora.CalculadoraImposto;
+import SenaiMI78.service.notificacoes.ConfirmacaoEmailService;
 import SenaiMI78.service.validador.ValidacaoQuantidade;
 
 public class ProcessadorDePedido {

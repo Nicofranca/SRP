@@ -1,4 +1,4 @@
-package SenaiMI78.service;
+package SenaiMI78.service.notificacoes;
 
 public class ConfirmacaoEmailService {
     public void enviarConfirmacaoPorEmail(String email, String idPedido) {
